@@ -1,0 +1,227 @@
+<md-toolbar>
+  <div class="md-toolbar-tools">
+    <md-button class="md-icon-button" aria-label="Settings" ng-click="vm.toggleRight()">
+      <md-icon ng-style="{color: 'black'}" class="material-icons">
+        menu
+      </md-icon>
+    </md-button>
+    <img ng-src="https://cdn-secure.etax.com.au/Content/Images/responsive/etax-logo.png" alt="eTax">
+  </div>
+</md-toolbar>
+
+<div layout="row">
+  <div flex="15">
+  </div>
+  <div flex="70">
+    <div>
+      <md-content class="md-padding">
+        <h1 class="md-display-2">Personal Details</h1>
+        <p>Please complete the following information relating to your tax return. By continuing below, you are appointing Etax Accountants Pty Ltd as your tax agent. This will allow us to request an extension of time for your tax return if necessary.</p>
+        <md-tabs md-dynamic-height md-border-bottom>
+          <md-tab label="Personal Details">
+            <md-content class="md-padding">
+              <h2 class="md-display1">Personal Information</h2>
+              <div layout="column" layout-fill>
+                <md-content layout-padding>
+                  <form name="userForm">
+                    <div layout layout-sm="column">
+                      <md-input-container style="width:70%">
+                        <label>Tax File Number (TFN)</label>
+                        <input ng-model="user.company">
+                      </md-input-container>
+                    </div>
+                    <div layout layout-sm="column">
+                      <md-input-container flex>
+                        <label>Title</label>
+                        <input ng-model="user.title">
+                      </md-input-container>
+                      <md-input-container flex>
+                        <label>First name</label>
+                        <input ng-model="user.firstName">
+                      </md-input-container>
+                      <md-input-container flex>
+                        <label>Middle name</label>
+                        <input ng-model="user.middleName">
+                      </md-input-container>
+                      <md-input-container flex>
+                        <label>Family Name</label>
+                        <input ng-model="theMax">
+                      </md-input-container>
+                    </div>
+                    <div layout layout-sm="column">
+                      <md-input-container flex="50">
+                        <label>Mobile Phone Number</label>
+                        <input ng-model="user.title">
+                      </md-input-container>
+                      <md-input-container flex="15">
+                        <label>Area Code</label>
+                        <input ng-model="user.firstName">
+                      </md-input-container>
+                      <md-input-container flex="35">
+                        <label>Daytime phone number</label>
+                        <input ng-model="user.middleName">
+                      </md-input-container>
+                    </div>
+                    <div layout="row">
+                      <p>Has your name or title changed since your last tax return was lodged?</p>
+                    </div>
+                    <div layout layout-sm="column">
+                      <md-radio-group ng-model="data.group1">
+                        <md-radio-button value="Yes" class="md-primary">Yes</md-radio-button>
+                        <md-radio-button value="No"> No </md-radio-button>
+                      </md-radio-group>
+                    </div>
+                    <div layout="row">
+                      <p>Gender</p>
+                    </div>
+                    <div layout layout-sm="column">
+                      <md-radio-group ng-model="data.group2">
+                        <md-radio-button value="Male" class="md-primary">Male</md-radio-button>
+                        <md-radio-button value="Female"> Female </md-radio-button>
+                      </md-radio-group>
+                    </div>
+                    <div layout="row">
+                      <p>Is this the last Australian tax return that you will ever lodge? </p>
+                    </div>
+                    <div layout layout-sm="column">
+                      <md-radio-group ng-model="data.group3">
+                        <md-radio-button value="Yes" class="md-primary">Yes</md-radio-button>
+                        <md-radio-button value="No"> No </md-radio-button>
+                      </md-radio-group>
+                    </div>
+                    <br>
+                    <br>
+                    <h2 class="md-display1">Residency Details</h2>
+                    <div layout="row">
+                      <p>Do you have Australian Citizenship?</p>
+                    </div>
+                    <div layout layout-sm="column">
+                      <md-radio-group ng-model="data.group4">
+                        <md-radio-button value="Yes" class="md-primary">Yes</md-radio-button>
+                        <md-radio-button value="No"> No </md-radio-button>
+                      </md-radio-group>
+                    </div>
+                    <div layout="row">
+                      <p>Did you live in Australia for more than 183 days in total, between 1 July 2014 – 30 June 2015?</p>
+                    </div>
+                    <div layout layout-sm="column">
+                      <md-radio-group ng-model="data.group5">
+                        <md-radio-button value="Yes" class="md-primary">Yes</md-radio-button>
+                        <md-radio-button value="No"> No </md-radio-button>
+                      </md-radio-group>
+                    </div>
+                    <br>
+                    <br>
+                    <h2 class="md-display1">Bank Account to Receive Your Tax Refund</h2>
+                    <label>Bank account details are required by the ATO on every tax return.</label>
+                    <div layout layout-sm="column">
+                      <md-input-container flex="25">
+                        <label>BSB number</label>
+                        <input ng-model="user.bsbnum">
+                      </md-input-container>
+                      <md-input-container flex="25">
+                        <label>Account number</label>
+                        <input ng-model="user.accno">
+                      </md-input-container>
+                      <md-input-container flex="50">
+                        <label>Name of Account Holder</label>
+                        <input ng-model="user.accname">
+                      </md-input-container>
+                    </div>
+                  </form>
+                </md-content>
+              </div>
+            </md-content>
+          </md-tab>
+          <md-tab label="Your Income">
+            <md-content class="md-padding">
+              <h2 class="md-display1">Salary or Wages</h2>
+              <form name="userForm">
+                <div layout layout-sm="column">
+                  <md-input-container style="width:70%">
+                    <label>Your Occupation or Job Title</label>
+                    <input ng-model="user.job">
+                  </md-input-container>
+                </div>
+                <div layout layout-sm="column">
+                  <md-input-container style="width:70%">
+                    <label>How many PAYG Summaries do you have?</label>
+                    <input ng-model="user.payg">
+                  </md-input-container>
+                </div>
+                <div layout layout-sm="column">
+                  <md-input-container flex>
+                    <label>Payer's ABN</label>
+                    <input ng-model="user.abn">
+                  </md-input-container>
+                  <md-input-container flex>
+                    <label>Total Tax Withheld</label>
+                    <input ng-model="user.tax">
+                  </md-input-container>
+                  <md-input-container flex>
+                    <label>Gross Payments (Income)</label>
+                    <input ng-model="user.gross">
+                  </md-input-container>
+                </div>
+                <div layout="row">
+                  <p>This was my only salary or income during the past year.</p>
+                </div>
+                <div layout layout-sm="column">
+                  <md-radio-group ng-model="data.group6">
+                    <md-radio-button value="Yes" class="md-primary">Yes</md-radio-button>
+                    <md-radio-button value="No"> No </md-radio-button>
+                  </md-radio-group>
+                </div>
+                <br>
+                <md-input-container>Please add notes about any other income</label>
+                  <textarea ng-model="user.incomeNotes" columns="1" md-maxlength="150"></textarea>
+                </md-input-container>
+                <md-content layout-padding class="autoScroll">
+                  <md-input-container style="width:70%" class="md-icon-float" flex>
+                    <!-- Use floating label instead of placeholder -->
+                    <label>Payer's ABN</label>
+                    <md-icon ng-style="{color: 'black'}" class="material-icons">
+                      person
+                    </md-icon>
+                    <input ng-model="user.pabn" type="text">
+                  </md-input-container>
+                  <md-input-container style="width:70%" class="md-icon-float" flex>
+                    <!-- Use floating label instead of placeholder -->
+                    <label>Total Tax Withheld</label>
+                    <md-icon ng-style="{color: 'black'}" class="material-icons">
+                      attach_money
+                    </md-icon>
+                    <input ng-model="user.totalTax" type="text">
+                  </md-input-container>
+                  <md-input-container style="width:70%" class="md-icon-float" flex>
+                    <!-- Use floating label instead of placeholder -->
+                    <label>Gross Payments (Income)</label>
+                    <md-icon ng-style="{color: 'black'}" class="material-icons">
+                      attach_money
+                    </md-icon>
+                    <input ng-model="user.totalTax" type="text">
+                  </md-input-container>
+                </md-content>
+              </form>
+            </md-content>
+          </md-tab>
+          <md-tab label="Deductions">
+            <md-content class="md-padding">
+              <h1 class="md-display-2">Deductions</h1>
+              <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+            </md-content>
+          </md-tab>
+          <md-tab label="Other Items">
+            <md-content class="md-padding">
+              <h1 class="md-display-2">Other Items</h1>
+              <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+            </md-content>
+          </md-tab>
+        </md-tabs>
+      </md-content>
+    </div>
+
+  </div>
+  <div flex="15">
+  </div>
+</div>
